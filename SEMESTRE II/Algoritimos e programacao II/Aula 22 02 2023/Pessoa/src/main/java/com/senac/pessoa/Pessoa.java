@@ -3,7 +3,7 @@ package com.senac.pessoa;
 import java.util.Scanner;
 
 public class Pessoa {
-
+    
     private String nome;
     private int idade;
     private double peso;
@@ -65,6 +65,10 @@ public class Pessoa {
 //
 //        System.out.println("Digite o altura: ");
 //        this.altura = input.nextDouble();
+    }
+    
+    public void falar(String fala){
+        System.out.println(fala);
     }
 
     public String toString() {
