@@ -13,7 +13,6 @@ public class Main {
             pessoa.cadastrarPessoa();
             pessoa.falar("Olá mundo");
             pessoas[i] = pessoa;
-
         }
 
         System.out.println(pessoas[0].getNome());
