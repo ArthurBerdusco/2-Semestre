@@ -1,0 +1,31 @@
+div#header{
+    border: 5px solid red;
+    width: 1200px;
+    height: 50px;
+    padding: 2px;
+    align-items: center;   
+}
+
+div#menu{
+    border: 5px solid red;
+    padding: 2px;
+    width: 300px;
+    height: 500px;  
+}
+
+div#rodape{
+    border: 5px solid red;
+    padding: 2px;
+}
+
+div#acao{
+    border: 5px solid red;
+    padding: 2px;
+}
+
+div#conteudo{
+    border: 5px solid red;
+    padding: 2px;
+    width: 300px;
+    position: relative;
+}
