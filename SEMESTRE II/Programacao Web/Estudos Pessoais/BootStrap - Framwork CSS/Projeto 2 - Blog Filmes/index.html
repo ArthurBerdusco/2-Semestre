@@ -1,0 +1,228 @@
+'<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body onload="initInfo()">
+
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A Magia do Cinema</a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Link
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Link</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Procurar">
+                    <button class="btn btn-outline-warning" type="submit">Procurar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção de posts -->
+    <section id="posts" class="p-5 bg-light">
+        <div class="container">
+            <h1 class="offcanvas-title fs-2 text-center">Entretenimento em tela cheia: mergulhe no mundo do cinema conosco!</h1>
+                <hr />
+        </div>
+
+        <!-- Post - 1 -->
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card mb-5 shadow-sm pt-3">
+                    <img src="img/good_father_1.jpg" class="img-fluid img-small mx-auto">
+                    <div class="card-body">
+                        <div class="card-body pt-0">
+                            <h4>Poderoso Chefão - Obra-prima do cinema mundial</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>"O Poderoso Chefão" é um dos melhores filmes já feitos, aclamado por sua narrativa envolvente, atuações icônicas e representação realista da máfia italiana. Desde seu lançamento em 1972, tem sido amplamente elogiado e influenciou muitos cineastas e artistas, sendo um filme de referência para o cinema contemporâneo...</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="mb-0">Data do post: 25/02/2023</p>
+                                <p id="postID6">Visualizações: </p>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-outline-danger rounded-1 justify-content-end mt-2" id="6">Leia Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post - 2 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card mb-5 shadow-sm pt-3">
+                    <img src="img/parasita.jpg" class="img-fluid img-small mx-auto">
+                    <div class="card-body pt-0">
+                        <div class="card-body">
+                            <h4>Parasita - Uma critica social para o mundo atual</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>"Parasita" é um filme habilidoso e simbólico, que aborda a desigualdade social e a luta de classes de maneira perspicaz e reflexiva, tornando-se um dos filmes mais aclamados e impactantes da década...</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="mb-0">Data do post: 22/02/2023</p>
+                                <p id="postID5">Visualizações: </p>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-outline-danger rounded-1 justify-content-end mt-2" id="5">Leia Mais</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post - 3 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card mb-5 shadow-sm pt-3">
+                    <img src="img/oscar_2022.jpg" class="img-fluid img-small mx-auto">
+                    <div class="card-body pt-0">
+                        <div class="card-body">
+                            <h4>Oscar 2022 - Principais destaques da premiação do oscar em 2022</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>"Veja tudo que rolou na cerimônia do Oscar 2022! Saiba quais foram os filmes e profissionais da indústria do cinema premiados, as performances musicais, os discursos emocionantes e as homenagens realizadas durante a noite mais aguardada pelos amantes da sétima arte.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="mb-0">Data do post: 13/02/2023</p>
+                                <p id="postID4">Visualizações: </p>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-outline-danger rounded-1 justify-content-end mt-2" id="4">Leia Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post - 4 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card mb-5 shadow-sm pt-3">
+                    <img src="img/estudio_gravacao.jpg" class="img-fluid  img-small mx-auto">
+                    <div class="card-body pt-0">
+                        <div class="card-body">
+                            <h4>Conheça os 3 principais estudios de gravação do mundo!</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>"Os três principais estúdios de gravação de filmes do mundo: Walt Disney Studios, Warner Bros. Studios e Universal Studios. Veja aonde são feitas as produções de maior sucesso desses estúdios, suas estratégias para se manterem competitivos e os desafios que enfrentam.
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="mb-0">Data do post: 02/02/2023</p>
+                                <p  id="postID3">Visualizações: </p>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-outline-danger rounded-1 justify-content-end mt-2" id="3">Leia Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post - 5 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card mb-5 shadow-sm pt-3">
+                    <img src="img/top 10.jpg" class="img-fluid  img-small mx-auto">
+                    <div class="card-body pt-0">
+                        <div class="card-body">
+                            <h4>Top 10 - Melhores filmes de todos os tempos IMDB</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>"Apresenta dos 10 melhores filmes do ranking IMDb, com informações sobre cada obra, incluindo sinopse, análise do sucesso de cada filme na avaliação dos usuários do IMDb, curiosidades sobre a produção e indicações ao Oscar. É uma leitura interessante e informativa para os amantes do cinema que buscam sugestões de filmes bem avaliados pelo público.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="mb-0">Data do post: 17/01/2023</p>
+                                <p id="postID2">Visualizações: </p>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-outline-danger rounded-1 justify-content-end mt-2" id="2">Leia Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post - 6 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card mb-5 shadow-sm  pt-3">
+                    <img src="img/cinema_brasil.jpg" class="img-fluid  img-small mx-auto">
+                    <div class="card-body pt-0">
+                        <div class="card-body">
+                            <h4>4 Curiosidades do cinema brasileiro</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>"Algumas curiosidades sobre o cinema brasileiro, incluindo o clássico "Limite", o sucesso internacional de "Cidade de Deus", a polêmica cena de Leila Diniz e o impacto do "AI-5" na indústria cinematográfica do país.</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="mb-0">Data do post: 09/01 /2023</p>
+                                <p id="postID1">Visualizações: </p>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-outline-danger rounded-1 justify-content-end mt-2" id="1">Leia Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous">
+    </script>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>'

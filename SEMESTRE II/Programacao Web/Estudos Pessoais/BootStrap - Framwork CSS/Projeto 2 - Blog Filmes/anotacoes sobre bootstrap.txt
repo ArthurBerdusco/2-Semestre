@@ -1,0 +1,36 @@
+bootstrap:
+open sorce css framework - Criação de sites responsivos com animação de varios elementos css
+
+Primeiro temos que linkar o framework a nossa pagina de desenvolvimento HTML, para isso é possivel baixara o framework atraves do terminal npm ou gem, ou linkar atraves da internet, ou utilizar um script atraves da internet tambem.
+
+definir tamanhos das telas "Screeans": sm, md, lg
+bg-dark = cor background
+p/pt/pb/pl/pr = padding
+
+
+
+
+Site:
+Nav bar
+
+Showcase
+
+Newsletter
+
+boxes
+
+Learn Sections
+
+Question Accordion
+
+Instructors 
+
+
+
+Ele sempre começa criando um elemento principal semantico para aquela parte do site, depois ele cria outro elemento para definir a estrutura e organização daqueles itens e adiciona os itens Exemplo
+
+section
+   container flex
+       rows 
+
+
