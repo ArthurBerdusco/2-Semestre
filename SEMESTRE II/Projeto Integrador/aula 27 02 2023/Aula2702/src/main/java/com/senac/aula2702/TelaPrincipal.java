@@ -2,10 +2,13 @@ package com.senac.aula2702;
 
 import javax.swing.JOptionPane;
 
+
 public class TelaPrincipal extends javax.swing.JFrame {
 
     public TelaPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(MAXIMIZED_BOTH);
     }
 
     @SuppressWarnings("unchecked")
@@ -86,6 +89,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         btnDialogo.setText("Dialogo");
+        btnDialogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDialogoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,7 +123,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSimplesActionPerformed
 
     private void btnEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntradaActionPerformed
-        String nome = JOptionPane.showInputDialog(this, "Digite seu nome: ");
+        String nome = JOptionPane.showInputDialog(this,
+                                                  "Digite seu nome: "
+                                                  );
         JOptionPane.showMessageDialog(this, "Seja bem-vindo(a): " + nome);
     }//GEN-LAST:event_btnEntradaActionPerformed
 
@@ -139,11 +149,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                     );
     }//GEN-LAST:event_btnOpcoesActionPerformed
 
+    private void btnDialogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDialogoActionPerformed
+        ExemploDialogo dialogo = new ExemploDialogo(this, true); //IMPORTANTE
+        dialogo.setVisible(true);
+    }//GEN-LAST:event_btnDialogoActionPerformed
+
     public static void main(String args[]) {
 
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Motif".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
