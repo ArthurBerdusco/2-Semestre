@@ -21,4 +21,10 @@ public class Funcionario extends Pessoa{
         this.salario = salario;
     }
     
+    
+    @Override
+    public void falar(String frase){
+        System.out.println("Eu sou o funcionario : " + frase);
+    }
+    
 }
