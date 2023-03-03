@@ -3,11 +3,13 @@ package com.senac.conta;
 import java.util.Scanner;
 
 public class Conta {
+    
     //Atributos classe
     private int numero;
     private String nome_titular;
     private double saldo;
     
+    //Construtor
     public Conta(){
         this.setNome_titular();
     }

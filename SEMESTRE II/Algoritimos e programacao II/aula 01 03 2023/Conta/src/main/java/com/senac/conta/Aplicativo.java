@@ -6,6 +6,11 @@ public class Aplicativo {
     
     private Conta conta;
     
+    public static void clearScreen() {  
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();  
+    }
+    
     public boolean contaExistente(){
         boolean existente;
         if(conta == null ){
@@ -63,6 +68,6 @@ public class Aplicativo {
                 System.exit(0);
                 break;
           
-        }  
-    }
+        }      
+    }  
 }

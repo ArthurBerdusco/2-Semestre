@@ -1,8 +1,10 @@
 package com.senac.conta;
 
+import java.io.IOException;
+
 public class Main {
      
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         Aplicativo app = new Aplicativo();
         
@@ -12,6 +14,7 @@ public class Main {
             }else{
                 int escolha = app.menuApp();
                 app.operacao(escolha);
+                app.clearScreen();
             }
         }while(true);
     }
