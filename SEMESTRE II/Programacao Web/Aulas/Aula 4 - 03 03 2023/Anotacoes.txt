@@ -1,0 +1,21 @@
+Javascript
+JS - Não tipado
+Case sensitive
+
+xuxu = "a"
+xuxu = 1.0
+
+typescrip - fortemente tipado
+
+java - IDE escrita elementos que compoem lingua natual: sintaxico, semantico e lexo passou nisso > vira bitcode
+
+jvm - java machine "runtime do bitcode" 
+
+node é o runtime "engine"do js - 
+
+api swag
+
+programa estruturado é gravitacional
+
+DOM - API - Consumir API
+
