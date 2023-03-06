@@ -1,0 +1,8 @@
+nome: oji
+cpf: pkjih
+endereco: kjoj
+telefone: pkoj
+email: pkoj
+sexo: Masculino
+estadoCivil: null
+dataNasc: kj
