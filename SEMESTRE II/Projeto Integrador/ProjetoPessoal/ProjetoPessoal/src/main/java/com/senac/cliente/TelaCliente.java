@@ -1,6 +1,12 @@
 package com.senac.cliente;
 
 import com.senac.projetopessoal.TelaPrincipal;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 
@@ -11,6 +17,31 @@ public class TelaCliente extends javax.swing.JPanel{
     public TelaCliente() {
         initComponents();
         this.setVisible(false);
+        try {
+            atualizarTabela();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(TelaCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+        public void atualizarTabela() throws FileNotFoundException{
+            BufferedReader reader = new BufferedReader(new FileReader("C:/Users/ccure/OneDrive - Johnson Controls/Pictures/2-semestre/SEMESTRE II/Projeto Integrador/ProjetoPessoal/ProjetoPessoal/cliente.txt"));
+        
+        StringBuilder content = new StringBuilder();
+        String line;
+        
+        try {
+            while ((line = reader.readLine()) != null) {
+                content.append(line);
+                content.indexOf("arthur");
+                content.append(System.lineSeparator());
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(TelaCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        System.out.println(content.indexOf("cpf:"));
+
     }
 
     @SuppressWarnings("unchecked")

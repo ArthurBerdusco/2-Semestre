@@ -1,8 +1,8 @@
-nome: oji
-cpf: pkjih
-endereco: kjoj
-telefone: pkoj
-email: pkoj
+nome: arthur
+cpf: 42819319882
+endereco: rua adelaide braga negrelli
+telefone: 11932045718
+email: arthur.berdusco1@gmail.com
 sexo: Masculino
 estadoCivil: null
-dataNasc: kj
+dataNasc: 06/06/2000
