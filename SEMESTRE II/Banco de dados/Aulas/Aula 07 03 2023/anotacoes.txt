@@ -1,0 +1,5 @@
+Uso do br modelo
+
+Os atributos descrevem as entidades
+
+Atributo obrigatorio é quando é indicado * e opcional fica "o"
