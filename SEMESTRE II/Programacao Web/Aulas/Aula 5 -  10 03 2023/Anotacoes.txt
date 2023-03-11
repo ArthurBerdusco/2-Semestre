@@ -1,0 +1,14 @@
+Camel Case - ArthurBerdusco / NumFunc /
+JAVASCRIPT - não é tipado
+
+Um programa é feito por blocos
+funcoes sao boas para estruturar o codigo e criar blocos de controle de entrada e saida 
+
+refatorar código é fundamental para eficiencia e evitar obsolescencia
+
+refatorar: melhorar a performance o docido ou estrutura
+a semantica de tudo é muito importante tanto para a linguagem natural quanto para a o código, ela estrutura e da significado a existencia de algo
+
+não somos codificadores somos provedores de soluções
+
+clean code crazy horse
