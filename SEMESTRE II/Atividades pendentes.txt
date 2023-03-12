@@ -1,0 +1,2 @@
+Tarefas a fazer: 
+ADO banco de dados - Modelagem de banco com exemplo de caso - Pendente
