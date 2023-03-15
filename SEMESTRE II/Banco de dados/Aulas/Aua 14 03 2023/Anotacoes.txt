@@ -1,0 +1,13 @@
+1fn
+
+Campos em branco no banco são um problema
+
+rio de janeiro, rj, brasil
+
+criar uma tabela com 3 campos para armazenar o estado, sigla e pais
+
+se tiver telefone 1, 2, 3
+
+criar um unico campo para adicionar a pessoa e seus telefones
+
+-----------------------------------------
