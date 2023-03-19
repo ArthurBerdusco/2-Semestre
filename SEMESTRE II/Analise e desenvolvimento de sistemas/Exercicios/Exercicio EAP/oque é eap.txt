@@ -1,0 +1,6 @@
+eap - estrutura analítica do projeto
+
+A EAP (Estrutura Analítica do Projeto), do inglês Work Breakdown Structure (WBS), é uma subdivisão hierárquica do trabalho do projeto em partes menores, mais facilmente gerenciáveis. Seu objetivo primário é organizar o que deve ser feito para produzir as entregas do projeto.
+
+A EAP serve muito mais para mostrar como será realizado o projeto
+

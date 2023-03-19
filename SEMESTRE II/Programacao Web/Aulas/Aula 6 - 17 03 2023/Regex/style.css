@@ -1,0 +1,28 @@
+input{
+    width: 500px;
+}
+
+input#mensagem{
+    width: 500px;
+    height: 100px;
+}
+
+p{
+    margin-bottom: 1px;
+}
+
+textarea{
+    resize: none;
+    width: 500px;
+    height: 100px;
+   
+}
+
+button{
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+    margin-left: 190px;
+    
+}
+
