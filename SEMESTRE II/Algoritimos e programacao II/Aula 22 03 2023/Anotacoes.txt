@@ -1,0 +1,29 @@
+binario ou txt
+
+crud de arquivos txt
+
+Classe Path
+
+manipulação de arquivos, existem muitos metodos para captar e inseir diversas ações com as classes para arquivos
+
+Arquivos temporarios:
+c: users / <usuario> / appData / local / temp
+
+criar diretorios 
+criar arquivos
+
+guardar arquivos nos diretorios
+
+arquivos temporarios é usual para utilizar dados de maneira rapida
+
+temporario geralmente é utilizado em tempo de execução cria ou le e grava em temporarios e depois apaga, tenho processamento, preciso guardar e ai eu guardo no arquivo temporario.
+
+arquivos auxiliares para processamento do código 
+
+temporario - utiliza depois descarta
+tempo periodo que ele vai existir
+
+Cuidado com manipulação de arquivos e leitura pois ler um arquivo inteiro para string pode usar muita memoria
+
+
+

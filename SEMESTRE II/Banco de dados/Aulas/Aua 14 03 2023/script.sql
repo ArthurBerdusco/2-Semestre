@@ -32,18 +32,18 @@ create table produto (
 create table pedido (
 	num_ped smallint not null primary key auto_increment,
     prazo_entr smallint not null,
-    cd_cli smallint not null,
-    cd_vend smallint not null,
-    foreign key (cd_cli) references cliente (cod_cli),
-    foreign key (cd_vend) references vendedor (cod_vend)
+    fk_cd_cli smallint not null,
+    fk_cd_vend smallint not null,
+    foreign key (fk_cd_cli) references cliente (cod_cli),
+    foreign key (fk_cd_vend) references vendedor (cod_vend)
 );
 
 /*Tabela Item pedido*/
 create table item_pedido (
-	no_ped smallint not null,
-    cd_prod smallint not null,
+	fk_no_ped smallint not null,
+    fk_cd_prod smallint not null,
     qtd_ped float not null,
-    foreign key (no_ped) references pedido (num_ped),
-    foreign key(cd_prod) references produto(cod_prod)
+    foreign key (fk_no_ped) references pedido (num_ped),
+    foreign key(fk_cd_prod) references produto(cod_prod)
 );
 
