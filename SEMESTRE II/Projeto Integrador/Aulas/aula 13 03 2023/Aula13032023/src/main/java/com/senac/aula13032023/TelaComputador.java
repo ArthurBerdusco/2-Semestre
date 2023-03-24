@@ -233,6 +233,7 @@ public class TelaComputador extends javax.swing.JFrame {
 
         //Sistema Operacional
         String sistema = btSO.getSelection().getActionCommand();
+        System.out.println(sistema);
 
         //Tipo HD
         String tipoHD = cboHD.getSelectedItem().toString();
