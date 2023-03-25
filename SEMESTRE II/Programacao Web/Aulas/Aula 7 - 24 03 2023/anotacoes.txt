@@ -1,0 +1,13 @@
+
+estudar arrow functions
+mvc - model view controller
+
+estrutura - lifo pilha - o ultimo que entra é o primeiro que sai
+
+
+estrutura - fifo fila- o primeiro que entra é o primeiro a sair
+
+
+pop - remove o ultimo item da lista
+shift - remove o primeiro item da lista
+
