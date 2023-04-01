@@ -1,0 +1,8 @@
+metodo map importante para ler listas sem utilizar o laço for
+
+
+map(funcao com parametros)
+
+lista = ["carro1", "carro2", "carro3"]
+
+lista.foreach((carro, indiceCarro)=>{})

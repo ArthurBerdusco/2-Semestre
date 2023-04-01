@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>O Elemento "Object"</h1>
+    <h2>Diferenças entre <i>innerText</i>, <i>innerHTML</i> e <i> textContent</i></h2>
+
+    <p id="meuP"> Este elemente possui um spaço extra e contém <span>um elemento <i>span</i></span>.</p>
+
+    <button onclick="getinnerHTML()">Get innerHTML</button>
+    <button onclick="getinnerText()">Get innerText</button>
+    <button onclick="gettextContent()">Get textContent</button>
+
+    <pre id="demo"></pre>
+
+    <p>A propriedade innerHTML retorna:O conteúdo de texto do elemento, incluindo todo o espaçamento e tags HTML
+        internas.</p>
+    <p>A propriedade innerText retorna:Apenas o conteúdo de texto do elemento e todos os seus filhos, sem espaçamento de
+        texto oculto CSS e tags, exceto os elementos <i>script></i> e <i>style</i></p>.
+    <p>A propriedade textContent retorna: O conteúdo de texto do elemento e todos os descendentes, com espaçamento e
+        texto CSS oculto, mas sem tags.</p>
+
+    <script>
+        function getinnerText() {
+            let text = document.getElementById("meuP").innerText;
+            document.getElementById("demo").innerText = text;
+        }
+
+        function getinnerHTML() {
+            let text = document.getElementById("meuP").innerHTML;
+            document.getElementById("demo").innerText = text;
+        }
+
+        function gettextContent() {
+            let text = document.getElementById("meuP").textContent;
+            document.getElementById("demo").innerText = text;
+        }
+    </script>
+
+</body>
+
+</html>
