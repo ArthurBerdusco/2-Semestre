@@ -1,0 +1,1 @@
+Quando for deletar um cliente que esta referenciado em outras tabelas para deletar ele tem que deletar todos os dados de outras tabelas
