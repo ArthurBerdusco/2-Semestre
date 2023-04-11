@@ -1,0 +1,19 @@
+jdbc é um driver que integra o programa java para a linguagem sql
+
+JAVA >>> "JDBC"  <<<< SQL
+
+importar dependencia JDBC em dependencias
+com.mysql:mysql-connector-j
+
+pode copiar dependencias direto para o projeto no arquivo POM / posso clicar com botao direito em 
+
+<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>8.0.32</version>
+</dependency>
+
+
+nomedaclasse = nometabela
+
+hybernate sql para automatizar > criacao de tabelas automaticas no banco de acordo com as classes do projeto java
