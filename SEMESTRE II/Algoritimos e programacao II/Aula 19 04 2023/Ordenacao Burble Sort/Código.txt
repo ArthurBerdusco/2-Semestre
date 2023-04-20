@@ -1,0 +1,77 @@
+OrdenaÃ§Ã£o BubbleSort
+---------------------------------------------
+
+Numerico
+-------------------------------------------
+
+import java.util.Random;
+
+public class OrdenacaoBubbleSort {
+
+	public static void main(String[] args) {
+		final int TAMANHO_VETOR = 5;
+		Integer valores[] = new Integer[TAMANHO_VETOR];
+		Random random = new Random();
+		for (int i = 0; i <= TAMANHO_VETOR - 1; i++)
+			valores[i] = random.ints(1, TAMANHO_VETOR).findAny().getAsInt();
+		System.out.println("-------------------------------------");
+		for (int i = 0; i <= TAMANHO_VETOR - 1; i++) {
+			System.out.println(valores[i]+", ");
+		}
+		System.out.println("-------------------------------------");
+		int aux = 0;
+		for (int i = 0; i < valores.length - 1; i++) {
+			for (int j = 0; j < valores.length - i - 1; j++) {
+				if (valores[j] > valores[j + 1]) {
+					aux = valores[j];
+					valores[j] = valores[j + 1];
+					valores[j + 1] = aux;
+				}
+			}
+		}
+		System.out.println("-------------------------------------");
+		for (int i = 0; i <= TAMANHO_VETOR - 1; i++) {
+			System.out.println(valores[i]+", ");
+		}
+	}
+
+}
+
+String
+-------------------------------------------
+
+import java.util.Random;
+
+public class OrdenacaoBubbleSortString {
+
+	public static void main(String[] args) {
+
+		final int TAMANHO_VETOR = 5;
+		String valores[] = new String[TAMANHO_VETOR];
+		valores[0] = "Jacare";
+		valores[1] = "Elefante";
+		valores[2] = "Anta";
+		valores[3] = "Zebra";
+		valores[4] = "Lagarto";
+		System.out.println("-------------------------------------");
+		for (int i = 0; i <= TAMANHO_VETOR - 1; i++) {
+			System.out.println(valores[i] + ", ");
+		}
+		System.out.println("-------------------------------------");
+		String aux = "";
+		for (int i = 0; i < valores.length; i++) {
+			for (int j = i; j < valores.length; j++) {
+				if (valores[j].compareTo(valores[i]) < 0) {
+					aux = valores[j];
+					valores[j] = valores[i];
+					valores[i] = aux;
+				}
+			}
+		}
+		System.out.println("-------------------------------------");
+		for (int i = 0; i <= TAMANHO_VETOR - 1; i++) {
+			System.out.println(valores[i] + ", ");
+		}
+	}
+}
+
