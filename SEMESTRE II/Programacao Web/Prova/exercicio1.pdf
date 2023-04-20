@@ -1,0 +1,71 @@
+/*
+========== Centro Universitário SENAC ============== 
+ 
+Anáslie e Desenvolvimento de sistemas
+ 
+Programação Web
+ 
+Aluno - Arthur Silva Berdusco de Souza
+ 
+2ºB - Sala F279
+==================================================== 
+*/
+
+var id = 0; // ID Inicial do sistema
+var listaProdutos = []; // Array de produtos
+
+function limparProduto(){
+    document.getElementById("produto").value = "";
+}
+
+function adicionarProduto() {
+    if (document.getElementById("produto").value.trim() != "") {
+        var nomeProduto = document.getElementById("produto").value;
+        listaProdutos.push([id++, nomeProduto]);
+        atualizarTblProd();
+    } else {
+        alert("Preencha o campo nome do produto!");
+    }
+
+}
+
+function atualizarTblProd() {
+    tblHTML = document.getElementById("tbody");
+    tblHTML.innerHTML = "";
+
+    listaProdutos.forEach((produto)=>{
+        var novaLinha = `<tr id='${produto[0]}'> 
+                            <td style="text-align: center">
+                                ${produto[0]}
+                            </td> 
+                            <td style="text-align: center">
+                                ${produto[1]}
+                            </td>
+                            <td style="text-align: center">
+                                <button onClick = "editarProduto()" style='margin-right: 10'>Editar</button>
+                                <button onClick = "removerProduto(this)">Remover</button>
+                            </td> 
+                        </tr>`;
+        
+        tblHTML.innerHTML+=novaLinha;
+    })
+}
+
+function editarProduto() {
+    alert("Função indisponivel!");
+}
+
+function removerProduto(btRemovClick) {
+
+    var linhaRemov = btRemovClick.parentNode.parentNode;
+
+    var idProdRemov = linhaRemov.id;
+    
+    listaProdutos.forEach((produto,indice)=>{
+        if(produto[0] == idProdRemov){
+            listaProdutos.splice(indice, 1);
+        }
+    });  
+    atualizarTblProd();
+}
+
