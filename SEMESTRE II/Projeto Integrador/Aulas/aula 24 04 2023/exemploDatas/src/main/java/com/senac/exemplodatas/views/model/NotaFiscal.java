@@ -14,6 +14,56 @@ public class NotaFiscal {
     
     private int idNota;
     private int numeroNota;
-    private int valorNota;
+    private double valorNota;
+
+    public NotaFiscal() {
+    }
+
+    public NotaFiscal(int numeroNota, double valorNota, Date data) {
+        this.numeroNota = numeroNota;
+        this.valorNota = valorNota;
+        this.data = data;
+    }
+
+    public NotaFiscal(int idNota, int numeroNota, double valorNota, Date data) {
+        this.idNota = idNota;
+        this.numeroNota = numeroNota;
+        this.valorNota = valorNota;
+        this.data = data;
+    }
+    
+    
+
+    public int getIdNota() {
+        return idNota;
+    }
+
+    public void setIdNota(int idNota) {
+        this.idNota = idNota;
+    }
+
+    public int getNumeroNota() {
+        return numeroNota;
+    }
+
+    public void setNumeroNota(int numeroNota) {
+        this.numeroNota = numeroNota;
+    }
+
+    public double getValorNota() {
+        return valorNota;
+    }
+
+    public void setValorNota(double valorNota) {
+        this.valorNota = valorNota;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
     private Date data;
 }

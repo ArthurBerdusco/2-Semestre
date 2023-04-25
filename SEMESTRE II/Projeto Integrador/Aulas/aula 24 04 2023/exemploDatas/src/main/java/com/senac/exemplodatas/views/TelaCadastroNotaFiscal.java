@@ -4,6 +4,11 @@
  */
 package com.senac.exemplodatas.views;
 
+import com.senac.exemplodatas.dao.NotaFiscalDAO;
+import com.senac.exemplodatas.views.model.NotaFiscal;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jsilva91
@@ -43,6 +48,11 @@ public class TelaCadastroNotaFiscal extends javax.swing.JFrame {
         lblData.setText("Data:");
 
         btnConfirmar.setText("Confimar");
+        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,6 +95,21 @@ public class TelaCadastroNotaFiscal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+        int numero = Integer.parseInt(txtNumero.getText());
+        double valor = Double.parseDouble(txtValor.getText());
+        Date data = jdcData.getDate();
+        
+        NotaFiscal nota = new NotaFiscal(numero, valor, data);
+        
+        boolean retorno = NotaFiscalDAO.salvar(nota);
+        if(retorno == true){
+            JOptionPane.showMessageDialog(this, "Sucesso");
+        }else{
+            JOptionPane.showMessageDialog(this, "Falha");
+        }
+    }//GEN-LAST:event_btnConfirmarActionPerformed
 
     /**
      * @param args the command line arguments
