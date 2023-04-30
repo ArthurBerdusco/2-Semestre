@@ -1,0 +1,22 @@
+show tables - mostra as tabelas do banco
+describe - mostra as colunas, tipos e configurações
+
+select *  - * lista todas as colunas
+
+select first_name - So listará first name
+
+order by ordena por crescente ou descrescente
+
+like 'a&' - 
+'%like%' - 
+
+
+
+
+[
+select 
+from
+where
+group by
+order by
+]

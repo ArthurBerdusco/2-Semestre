@@ -2,6 +2,7 @@ package com.senac.insertsort;
 
 import java.util.Random;
 
+
 public class InsertSort {
 
     public static String[] gerarPalavras() {
@@ -11,13 +12,12 @@ public class InsertSort {
 
         for (int i = 0; i < palavras.length; i++) {
             StringBuilder sb = new StringBuilder();
-            for (int j = 0; j < 5; j++) {
+            for (int j = 0; j < 6; j++) {
                 int index = random.nextInt(letras.length());
                 String palavra = sb.append(letras.charAt(index)).toString();
                 palavras[i] = palavra;
             }
         }
-
         return palavras;
     }
 
@@ -34,7 +34,7 @@ public class InsertSort {
         return palavras;
     }
 
-    public static void lerPalavras(String[] palavras) {
+    public static void imprimirPalavras(String[] palavras) {
         for (int i = 0; i < palavras.length; i++) {
             System.out.println(palavras[i]);
         }
@@ -42,7 +42,10 @@ public class InsertSort {
 
     public static void main(String[] args) {
         String[] palavras = gerarPalavras();
-        
-        lerPalavras(organizarPalavras(palavras));
+        System.out.println("---> Palavras Desorganizadas <---");
+        imprimirPalavras(palavras);
+        String[] palavrasOrganizadas = organizarPalavras(palavras);
+        System.out.println("\n---> Palavras Organizadas <---");
+        imprimirPalavras(palavrasOrganizadas);
     }
 }
