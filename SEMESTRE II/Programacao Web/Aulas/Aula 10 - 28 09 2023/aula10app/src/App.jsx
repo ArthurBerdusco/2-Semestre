@@ -1,18 +1,16 @@
-import CadastrarCliente from "./components/cadastrarCliente"
-import MenuCadastro from "./components/menuCadastro"
-import { useState } from 'react';
+import MenuBusca from "./components/MenuBusca"
+import TabelaBrinquedos from "./components/TabelaBrinquedos"
 
 
 function App() {
-
-  const nome = "Teste";
   
   return (
     <>
-      <MenuCadastro />
-      <CadastrarCliente nome="Ola" idade="asd" cpf="teste"/>
+      <MenuBusca/>
+      <TabelaBrinquedos/>
     </>
   )
+
 }
 
 export default App

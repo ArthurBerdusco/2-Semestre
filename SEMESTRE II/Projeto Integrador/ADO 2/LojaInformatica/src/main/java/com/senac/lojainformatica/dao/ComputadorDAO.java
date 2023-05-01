@@ -9,12 +9,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ComputadorDAO {
-    
-    public static final String  DRIVER = "com.mysql.cj.jdbc.Driver";
+
+    public static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     public static final String LOGIN = "root";
     private static final String SENHA = "password";
-    private static final String url = "jdbc:mysql://localhost:3306/basecomputador";
-    
+    private static final String URL = "jdbc:mysql://localhost:3306/lojainformatica";
+
     public static boolean salvar(Computador comp) {
         boolean retorno = false;
         PreparedStatement instrucaoSQL = null;
@@ -23,7 +23,7 @@ public class ComputadorDAO {
             //PASSO 1 - Carregar o driver JDBC
             Class.forName(DRIVER);
             //PASSO 2 - Realizar conexão com o banco de dados
-            conexao = DriverManager.getConnection(url,LOGIN,SENHA);
+            conexao = DriverManager.getConnection(URL, LOGIN, SENHA);
             //PASSO 3 - Preparar comando SQL
             instrucaoSQL = conexao.prepareStatement("INSERT INTO computador (marca, HD, processador)"
                     + "VALUES(?,?,?)");
@@ -31,15 +31,15 @@ public class ComputadorDAO {
             instrucaoSQL.setString(1, Computador.getMarca());
             instrucaoSQL.setString(2, comp.getHD());
             instrucaoSQL.setString(3, comp.getProcessador());
-            
+
             int linhasAfetadas = instrucaoSQL.executeUpdate();
-            
+
             if (linhasAfetadas > 0) {
                 retorno = true;
             } else {
                 throw new Exception("Por favor digite apenas letras no nome");
             }
-            
+
         } catch (ClassNotFoundException e) {
             System.out.println("Não foi possível carregar o driver JDBC");
         } catch (SQLException e) {
@@ -47,20 +47,23 @@ public class ComputadorDAO {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
-            //Libero os recursos da memória
+            //Liberar os recursos da memória
             try {
                 if (instrucaoSQL != null) {
                     instrucaoSQL.close();
                 }
-                //GerenciadorConexao.fecharConexao();
-                conexao.close();
+                if (conexao != null) {
+                    if (!(conexao.isClosed())) {
+                        conexao.close();
+                    }
+                }
             } catch (SQLException ex) {
                 System.out.println("Não foi possivel fechar conexao com o banco");
             }
         }
         return retorno;
     }
-    
+
     public static ArrayList<Computador> listar() {
         ArrayList<Computador> listaComputadores = new ArrayList<>();
         PreparedStatement instrucaoSQL = null;
@@ -69,13 +72,13 @@ public class ComputadorDAO {
             //PASSO 1 - Carregar o driver JDBC
             Class.forName(DRIVER);
             //PASSO 2 - Realizar conexão com o banco de dados
-            conexao = DriverManager.getConnection(url,LOGIN,SENHA);
+            conexao = DriverManager.getConnection(URL, LOGIN, SENHA);
             //PASSO 3 - Preparar comando SQL
             instrucaoSQL = conexao.prepareStatement("SELECT * FROM computador");
             //PASSO 4 - Passar os parâmetros para o Statement
 
             ResultSet rs = instrucaoSQL.executeQuery();
-            
+
             if (rs != null) {
                 while (rs.next()) {
                     Computador computador = new Computador();
@@ -87,7 +90,7 @@ public class ComputadorDAO {
             } else {
                 throw new Exception("Não foi possível listar os computadores do banco de dados");
             }
-            
+
         } catch (ClassNotFoundException e) {
             System.out.println("Não foi possível carregar o driver JDBC");
         } catch (SQLException e) {
@@ -95,21 +98,23 @@ public class ComputadorDAO {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
-            //Libero os recursos da memória
+            //Liberar os recursos da memória
             try {
                 if (instrucaoSQL != null) {
                     instrucaoSQL.close();
                 }
-                //GerenciadorConexao.fecharConexao();
-                conexao.close();
-                
+                if (conexao != null) {
+                    if (!(conexao.isClosed())) {
+                        conexao.close();
+                    }
+                }
             } catch (SQLException ex) {
                 System.out.println("Não foi possivel fechar conexao com o banco");
             }
         }
         return listaComputadores;
     }
-    
+
     public static ArrayList<Computador> listar(String processador) {
         ArrayList<Computador> listaComputadores = new ArrayList<>();
         PreparedStatement instrucaoSQL = null;
@@ -118,14 +123,14 @@ public class ComputadorDAO {
             //PASSO 1 - Carregar o driver JDBC
             Class.forName(DRIVER);
             //PASSO 2 - Realizar conexão com o banco de dados
-            conexao = DriverManager.getConnection(url,LOGIN,SENHA);
+            conexao = DriverManager.getConnection(URL, LOGIN, SENHA);
             //PASSO 3 - Preparar comando SQL
             instrucaoSQL = conexao.prepareStatement("SELECT * FROM computador "
                     + "WHERE processador = ?");
             //PASSO 4 - Passar os parâmetros para o Statement
             instrucaoSQL.setString(1, processador);
             ResultSet rs = instrucaoSQL.executeQuery();
-            
+
             if (rs != null) {
                 while (rs.next()) {
                     Computador computador = new Computador();
@@ -137,7 +142,7 @@ public class ComputadorDAO {
             } else {
                 throw new Exception("Não foi possível listar os computadores do banco de dados");
             }
-            
+
         } catch (ClassNotFoundException e) {
             System.out.println("Não foi possível carregar o driver JDBC");
         } catch (SQLException e) {
@@ -145,31 +150,33 @@ public class ComputadorDAO {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
-            //Libero os recursos da memória
+            //Liberar os recursos da memória
             try {
                 if (instrucaoSQL != null) {
                     instrucaoSQL.close();
                 }
-                //GerenciadorConexao.fecharConexao();
-                conexao.close();
-                
+                if (conexao != null) {
+                    if (!(conexao.isClosed())) {
+                        conexao.close();
+                    }
+                }
             } catch (SQLException ex) {
                 System.out.println("Não foi possivel fechar conexao com o banco");
             }
         }
         return listaComputadores;
     }
-    
+
     public static boolean alterar(int editId, Computador comp) {
         boolean retorno = false;
         Connection conexao = null;
         PreparedStatement instrucaoSQL = null;
-        
+
         try {
             //PASSO 1 - Carregar o driver JDBC
             Class.forName(DRIVER);
             //PASSO 2 - Realizar conexão com o banco de dados
-            conexao = DriverManager.getConnection(url,LOGIN,SENHA);
+            conexao = DriverManager.getConnection(URL, LOGIN, SENHA);
 
             //PASSO 3 - PREPARAR INSTRUÇÃO
             instrucaoSQL = conexao.prepareStatement("UPDATE computador SET HD = ?, processador = ? WHERE idComputador = ?");
@@ -179,13 +186,13 @@ public class ComputadorDAO {
 
             //PASSO 4 - EXECUCAO DA QUERY
             int linhasAfetadas = instrucaoSQL.executeUpdate();
-            
+
             if (linhasAfetadas > 0) {
                 retorno = true;
             } else {
                 retorno = false;
             }
-            
+
         } catch (ClassNotFoundException ex) {
             System.out.println("Instancia JDBC MYSQL não foi localizada");
         } catch (SQLException ex) {
@@ -194,32 +201,34 @@ public class ComputadorDAO {
         } catch (Exception ex) {
             System.out.print(ex.getMessage());
         } finally {
-            //Libero os recursos da memória
+            //Liberar os recursos da memória
             try {
                 if (instrucaoSQL != null) {
                     instrucaoSQL.close();
                 }
-                //GerenciadorConexao.fecharConexao();
-                conexao.close();
-                
+                if (conexao != null) {
+                    if (!(conexao.isClosed())) {
+                        conexao.close();
+                    }
+                }
             } catch (SQLException ex) {
                 System.out.println("Não foi possivel fechar conexao com o banco");
             }
         }
-        
+
         return retorno;
     }
-    
+
     public static boolean deletar(int editId) {
         boolean retorno = false;
         Connection conexao = null;
         PreparedStatement instrucaoSQL = null;
-        
+
         try {
             //PASSO 1 - Carregar o driver JDBC
             Class.forName(DRIVER);
             //PASSO 2 - Realizar conexão com o banco de dados
-            conexao = DriverManager.getConnection(url,LOGIN,SENHA);
+            conexao = DriverManager.getConnection(URL, LOGIN, SENHA);
 
             //PASSO 3 - PREPARAR INSTRUÇÃO
             instrucaoSQL = conexao.prepareStatement("DELETE FROM computador WHERE idComputador = ?");
@@ -227,13 +236,13 @@ public class ComputadorDAO {
 
             //PASSO 4 - EXECUCAO DA QUERY
             int linhasAfetadas = instrucaoSQL.executeUpdate();
-            
+
             if (linhasAfetadas > 0) {
                 retorno = true;
             } else {
                 retorno = false;
             }
-            
+
         } catch (ClassNotFoundException ex) {
             System.out.println("Instancia JDBC MYSQL não foi localizada");
         } catch (SQLException ex) {
@@ -242,20 +251,20 @@ public class ComputadorDAO {
         } catch (Exception ex) {
             System.out.print(ex.getMessage());
         } finally {
-            //Libero os recursos da memória
+            //Liberar os recursos da memória
             try {
                 if (instrucaoSQL != null) {
                     instrucaoSQL.close();
                 }
-                //GerenciadorConexao.fecharConexao();
-                conexao.close();
-                
+                if (conexao != null) {
+                    if (!(conexao.isClosed())) {
+                        conexao.close();
+                    }
+                }
             } catch (SQLException ex) {
                 System.out.println("Não foi possivel fechar conexao com o banco");
             }
         }
-        
         return retorno;
     }
-    
 }

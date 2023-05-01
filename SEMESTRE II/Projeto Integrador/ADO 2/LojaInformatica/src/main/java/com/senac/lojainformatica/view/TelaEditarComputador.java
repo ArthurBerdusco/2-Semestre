@@ -37,6 +37,7 @@ public class TelaEditarComputador extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Editar");
         setPreferredSize(new java.awt.Dimension(492, 291));
 
         pnlEspecificacao.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar computador", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));

@@ -61,6 +61,7 @@ public class TelaConsultaComputador extends javax.swing.JFrame {
         btnAtualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Base de dados");
 
         pnlTbl.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Computadores Registrados", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
@@ -211,16 +212,19 @@ public class TelaConsultaComputador extends javax.swing.JFrame {
     }//GEN-LAST:event_cboProcessActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        Computador editComp = new Computador();
 
-        int linhaSelecionada = tblComputador.getSelectedRow();
+        if (tblComputador.getSelectedRow() != -1) { //Validar se há um computador selecionado para editar
+            Computador editComp = new Computador();
+            int linhaSelecionada = tblComputador.getSelectedRow();
+            DefaultTableModel modelo = (DefaultTableModel) tblComputador.getModel();
+            int id = Integer.parseInt(modelo.getValueAt(linhaSelecionada, 0).toString());
+            editComp.setHD(String.valueOf(modelo.getValueAt(linhaSelecionada, 2)));
+            editComp.setProcessador(String.valueOf(modelo.getValueAt(linhaSelecionada, 3)));
+            new TelaEditarComputador(id, editComp).setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor selecione um computador");
+        }
 
-        DefaultTableModel modelo = (DefaultTableModel) tblComputador.getModel();
-        int id = Integer.parseInt(modelo.getValueAt(linhaSelecionada, 0).toString());
-        editComp.setHD(String.valueOf(modelo.getValueAt(linhaSelecionada, 2)));
-        editComp.setProcessador(String.valueOf(modelo.getValueAt(linhaSelecionada, 3)));
-
-        new TelaEditarComputador(id, editComp).setVisible(true);
 
     }//GEN-LAST:event_btnEditarActionPerformed
 
@@ -234,22 +238,25 @@ public class TelaConsultaComputador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        Computador editComp = new Computador();
 
-        int linhaSelecionada = tblComputador.getSelectedRow();
+        if (tblComputador.getSelectedRow() != -1) { //Validar se há um computador selecionado para excluir
+            Computador editComp = new Computador();
+            int linhaSelecionada = tblComputador.getSelectedRow();
 
-        DefaultTableModel modelo = (DefaultTableModel) tblComputador.getModel();
-        int id = Integer.parseInt(modelo.getValueAt(linhaSelecionada, 0).toString());
-        editComp.setHD(String.valueOf(modelo.getValueAt(linhaSelecionada, 2)));
-        editComp.setProcessador(String.valueOf(modelo.getValueAt(linhaSelecionada, 3)));
+            DefaultTableModel modelo = (DefaultTableModel) tblComputador.getModel();
+            int id = Integer.parseInt(modelo.getValueAt(linhaSelecionada, 0).toString());
 
-        boolean compDeletado = ComputadorDAO.deletar(id);
-        if (compDeletado == true) {
-            JOptionPane.showMessageDialog(this, "Computador deletado com sucesso");
-            listarComputadores();
-        } else {
-            JOptionPane.showConfirmDialog(this, "Erro ao deletatar computador");
+            boolean compDeletado = ComputadorDAO.deletar(id);
+            if (compDeletado == true) {
+                JOptionPane.showMessageDialog(this, "Computador deletado com sucesso");
+                listarComputadores();
+            } else {
+                JOptionPane.showConfirmDialog(this, "Erro ao deletatar computador");
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "Por favor selecione um computador");
         }
+
 
     }//GEN-LAST:event_btnExcluirActionPerformed
 

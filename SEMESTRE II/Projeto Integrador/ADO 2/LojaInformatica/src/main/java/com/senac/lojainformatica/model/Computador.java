@@ -6,6 +6,7 @@ public class Computador {
     private int idComputador;
     private static String marca = "ArthurSilva";
     private String HD;
+    private String processador;
 
     public int getIdComputador() {
         return idComputador;
@@ -14,7 +15,6 @@ public class Computador {
     public void setIdComputador(int idComputador) {
         this.idComputador = idComputador;
     }
-    private String processador;
 
     public Computador() {
     }
