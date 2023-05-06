@@ -1,0 +1,13 @@
+INNER JOIN - Faz a interceção de tabelas, ex:
+a "intercecao" b
+
+a.nome + b.nome
+
+qual a condição de interceção? par ajuntar as tabelas?
+
+
+
+-----------
+
+Left Join
+traz todos os campos da tabela A e a interceccao de A com B

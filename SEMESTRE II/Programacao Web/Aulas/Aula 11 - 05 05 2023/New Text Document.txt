@@ -1,0 +1,11 @@
+npm install react-router-dom   //Dependencia para realizar navegação entre telas
+
+HOME / SOBRE NOS / CLIENTE
+
+cria o componente rotas e dentro do componente eu organizo minhas rotas
+
+
+router vai ser um componente para fazer o roteamento: forma de criar um componente para percorrer as rotas ou percorrer as navegações (rotas no navegador) permite verificar se o usuario irá digitar a url com /cliente ele va corretamente
+
+
+crio as pastas, os arquivos index, cofiguro as rotas para navegação
