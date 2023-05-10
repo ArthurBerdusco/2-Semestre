@@ -1,0 +1,19 @@
+Views são importantes para visualização das tabelas de maneira rapida e simples, acessar de outro sistema, filtrar por colunas chaves ou colunas
+
+Para nao precisar ficar criando varias vezes a mesma query nos fazemos as views
+
+
+View não ocupa espaço na memoria e tambem não é recomendado fazer update em view ela é somente visualização rápida e atualizada de alguns campos unidos
+
+view não é tabela em memória
+
+
+
+
+create view as NOME_VIEW select ... inner ... group by... order by...
+
+alter view 
+
+replace view
+
+drop view

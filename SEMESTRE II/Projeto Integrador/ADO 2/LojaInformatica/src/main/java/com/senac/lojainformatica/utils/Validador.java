@@ -4,9 +4,19 @@ import java.util.ArrayList;
 import javax.swing.JComboBox;
 
 public class Validador {
+    
+    /**
+     * @Author
+     * 
+     */
 
     public ArrayList<String> listaErros = new ArrayList<>();
 
+    /**
+     * 
+     * @param cbo
+     * @return 
+     */
     public boolean validarComboBox(JComboBox cbo) {
         boolean retorno = false;
         try {
