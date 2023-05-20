@@ -1,0 +1,2 @@
+Algumas funções são criadas no banco de dados para melhorar o desempenho do sistema, exemplo digamos que um sistema web tenha que consultar a soma do salario de 1000 funcionarios. Nesse caso a aplicação banco de dados com web demoraria muito tempo para transmitir todos os dados e fazer o calculo. Se essa função é feita a nível de negocio no banco de dados ela se torna mais rapida e eficiente para este caso que é calcular o salario. Ela não precisa passar um volume de dados grande e vai passar so o resultado.
+
