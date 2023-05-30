@@ -1,0 +1,12 @@
+triggres sao utilizacadas 
+
+similar a funcao ou procedure porem ela é executada quando uma ocorrencia acontece. Ela é executada automaticamente quando um insert ou acontece em outra tabela
+
+create trigger atualizaestoque after insert on itemvenda for each row
+begin
+
+
+
+
+20:32:43	insert into item_pedido(fk_num_pedido, fk_cod_prod, qtd_ped)     values(11, 2,3)	Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`estoque_turmab`.`item_pedido`, CONSTRAINT `item_pedido_ibfk_2` FOREIGN KEY (`fk_cod_prod`) REFERENCES `produto` (`cod_prod`))	0.016 sec
+

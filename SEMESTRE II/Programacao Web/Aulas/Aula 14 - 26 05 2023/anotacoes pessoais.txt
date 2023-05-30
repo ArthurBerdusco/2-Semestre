@@ -1,0 +1,22 @@
+Criar estrutura MVC:
+
+1.Criar pasta principal
+2.Criar pasta server e pasta cliente
+3. Na pasta cliente devera ter o projeto REACT
+3.1 Na pasta servidor derera ter o servidor e suas dependencias
+
+4. na pasta servidor devera ser instalado as seguintes dependencias:
+	4.1 typescript: npm install typescript --save-dev -D
+	4.2 express: npm install express
+	4.3 tipagens do express: npm install --save @types/express -D
+	4.4 arquivo de configuração typescript: npx tsc --init
+	4.4 ts-node-dev "dependencia para manipular o codigo em tempo de execução": npm install ts-node-dev -D
+	4.6 configurar o script do ts-node-dev: "dev": "ts-node-dev src/server.ts"
+	4.5 Prisma integração com diversos DB relacionais simplificando consultas e oferecendo recursos avançados e melhora segurança de dados: npm install prisma
+	4.6 Instalar o prisma client permite a interação do node com banco de dados na camada de abstração: npm install @prisma/client
+	4.7 Iniciar o prisma: npx prisma init
+	4.8
+4.1 Na pasta alem das dependencias deverá ter?
+	4.1.1 uma pasta src
+	4.1.2 arquivo principal server que irá instegrar a dependencia express
+	4.1.3 arquvio routes para fazer o gerenciamento e trafego de informações das rota/endpoint: Rotas da api

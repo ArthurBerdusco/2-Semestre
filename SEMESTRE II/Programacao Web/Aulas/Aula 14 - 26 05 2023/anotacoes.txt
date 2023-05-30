@@ -1,0 +1,51 @@
+MVC - JAVA VIEW BANCO DE DADOS E CONTROLE DE PROCESSOS - MODELO DE ARQUITETURA DE ORGANIZACAO
+
+
+API: para que serve: Serve para separar os mundos e tecnologias 
+
+
+1ª Parte - Web - Front end - Roda em uma porta
+
+2ª Parte  - Back - Regras de negócio roda separado em outra porta
+
+em arquitetura de software,
+
+
+web faz a requisição e o servidor envia uma resposta
+
+web faz requisição servidor recebe a requisição trata de acordo com as regras de negócio e envia uma resposta para o cliente web, o cliente web recebe esta resposta e interpreta e reenderiza as informações recebidas pelo servidor
+
+typescript garante uma programação mais madura 
+
+
+ROTA E ENDPOINT ATIVAO MINHA API PARA REQUISICAO DAS INFORMAÇÕES
+
+pensar na arquitetura
+
+em uma arquitetura madura, voce divide os negocios
+
+Trabalhar crud do usuario e login
+
+nome do crud - user
+
+
+MVC - MODEL VIEW CONTROLLER
+
+EM SRC:
+PASTA - CONTROLLER
+PASTA - SERVICE
+PASTA - 
+
+
+NAVEGADOR:
+  TEM ROTA/ENDPOINT
+	CHAMA UMA ROTA
+		/TESTE
+
+Controller - ira controlar as requisições do navegador e irá redirecionar os serviços
+
+
+ID:     NEGOCIO  ATIVIDADE
+xxxx __negocio__ controler
+
+xxxx ___negocio__ sevice
